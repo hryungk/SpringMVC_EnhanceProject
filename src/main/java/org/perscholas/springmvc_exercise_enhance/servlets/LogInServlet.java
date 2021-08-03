@@ -1,4 +1,4 @@
-package org.perscholas.com.springmvc_exercise_enhance.servlets;
+package org.perscholas.springmvc_exercise_enhance.servlets;
 
 import java.io.IOException;
 
@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HomeServlet
+ * Servlet implementation class LogInServlet
  */
-@WebServlet("/IndexServlet")
-public class HomeServlet extends HttpServlet {
+@WebServlet("/LogInServlet")
+public class LogInServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HomeServlet() {
+    public LogInServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,16 +29,20 @@ public class HomeServlet extends HttpServlet {
 	 */
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 		rd.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+    @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String username = request.getParameter("userId");
+		String password = request.getParameter("password");
+		System.out.println("username: " + username);
+		System.out.println("password: " + password);
+		response.sendRedirect("LogInServlet");
 	}
 
 }

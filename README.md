@@ -7,5 +7,5 @@ Per Scholas Spring MVC Exercise - Enhance your project
     - Include a Welcome page, About Me page and Contact page
     - Include a navigation bar to link to each of the pages
     - Create a controller with methods to display each of the pages
-The Contact page should include a form that allows the user to enter a name and a message/question and submit it to the controller
+    - The Contact page should include a form that allows the user to enter a name and a message/question and submit it to the controller
     - Have the controller forward to an acknowledgement page with a custom message acknowledging the user's name (e.g., "Thank you <user>. We will contact you shortly.”)
